@@ -16,7 +16,7 @@ def frequency(byte_ngrams):
 
 # Example usage: Extracting byte 3-grams from an exe file
 file_path = '/Users/soumyajyotidutta/Desktop/autoyara/calc.exe'
-n = 3
+n = 1024
 result = extract_byte_ngrams(file_path, n)
 frequency = frequency(result)
 
