@@ -104,13 +104,13 @@ public class App {
       //     return ProgressBar.wrap(stream, task);
   } 
 
-  public static List<SigCandidate> myBuildCandidateSet(String inDir, String benBloomDir, String malBloomDir){
-    int gram_size = 256;
-    int toKeep = 100;
+  public static List<SigCandidate> myBuildCandidateSet(String inDir, String benBloomDir, String malBloomDir, int gram_size, int toKeep, long max_filter_size, boolean silent, double fp_rate){
+    // int gram_size = 256;
+    // int toKeep = 100;
     
-    long max_filter_size = 100;
-    boolean silent = false;
-    double fp_rate = 0.001;
+    // long max_filter_size = 100;
+    // boolean silent = false;
+    // double fp_rate = 0.001;
 
 
     File dir = new File(inDir);
