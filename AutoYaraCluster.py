@@ -1,6 +1,8 @@
 import os
 import re
 
+from py4j.java_gateway import JavaGateway
+
 def collectBloomSizes(filepaths):
 
     sizes = set()
@@ -20,11 +22,14 @@ def buildCandidateSet():
 
 
 def main():
+
+    gateway = JavaGateway()
+
     mal_dir = "./malicious-bytes"
     ben_dir = "./benign-bytes"
 
     # Create an ordered list of bloom sizes
-    boolSizes = collectBloomSizes([mal_dir, ben_dir])
+    bloomSizes = collectBloomSizes([mal_dir, ben_dir])
 
     # Create bloom filters
     mal_bloom = collectBloomFilters(mal_dir)
@@ -34,9 +39,21 @@ def main():
     best_rule_coverage = 0.0
     meets_min_desired_coverage = False
     
+    print(bloomSizes);
+    
     for bloomSize in bloomSizes:
         if best_rule_coverage >= 1.0 and meets_min_desired_coverage:
-            break
+            break # Break or Return ??
+
+        print(os.path.abspath("./mw1"))
+        print(os.path.abspath(ben_dir))
+        print(os.path.abspath(mal_dir))
+        final_candidates = gateway.entry_point.myBuildCandidateSet(os.path.abspath("./mw1"), os.path.abspath(ben_dir), os.path.abspath(mal_dir), bloomSize, 100, 100, False, 0.001)
+        print(final_candidates)
+
+main()
+
+
 
 
 
