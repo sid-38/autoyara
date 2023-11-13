@@ -159,5 +159,11 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+<<<<<<< HEAD
+*.tar
+*.tar.bz2
+
+=======
 # Custom 
 *-bytes
+>>>>>>> 56d56cc42d3f352e600b3129343877e888ef925a
