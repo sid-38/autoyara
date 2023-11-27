@@ -46,7 +46,7 @@ def main():
         ]
     print(ngram_clusters_to_yara(test_ngram_clusters, name="test"))
 
-main()
+# main()
 
             
             

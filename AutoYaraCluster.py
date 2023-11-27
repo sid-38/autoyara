@@ -33,8 +33,8 @@ def getSigcandidates(malware_bloom_dir, benign_bloom_dir, live_mal_dir):
     mal_dir = malware_bloom_dir
     ben_dir = benign_bloom_dir
     # Create an ordered list of bloom sizes
-    #bloomSizes = collectBloomSizes([mal_dir, ben_dir])
-    bloomSizes = [8]
+    bloomSizes = collectBloomSizes([mal_dir, ben_dir])
+    # bloomSizes = [8]
     # Create bloom filters
     mal_bloom = collectBloomFilters(mal_dir)
     ben_bloom = collectBloomFilters(ben_dir)
@@ -51,11 +51,11 @@ def getSigcandidates(malware_bloom_dir, benign_bloom_dir, live_mal_dir):
         if best_rule_coverage >= 1.0 and meets_min_desired_coverage:
             break # Break or Return ??
 
-        print(os.path.abspath("./mw1"))
-        print(os.path.abspath(ben_dir))
-        print(os.path.abspath(mal_dir))
+        # print(os.path.abspath("./mw1"))
+        # print(os.path.abspath(ben_dir))
+        # print(os.path.abspath(mal_dir))
         final_candidates = gateway.entry_point.myBuildCandidateSet(os.path.abspath(live_mal_dir), os.path.abspath(ben_dir), os.path.abspath(mal_dir), bloomSize, 100, 100, False, 0.001)
-        print(final_candidates)
+        # print(final_candidates)
         
         sigcandidates.update({bloomSize: final_candidates})
         sigkeys = sigcandidates.keys()
@@ -69,13 +69,13 @@ def getFilecount(dir_path):
 
         if os.path.isfile(os.path.join(dir_path, path)):
             count += 1
-    print('File count:', count)
+    # print('File count:', count)
     
     return count
 
 def createDataset(signatureCandidates: dict, ngramSize: int, numberOfFiles: int):
     
-    print(signatureCandidates)
+    # print(signatureCandidates)
     # sigkeys = list(signatureCandidates.keys())
     # print(sigkeys)
     # sigIndex = np.where(sigkeys == ngramSize) 
@@ -83,21 +83,14 @@ def createDataset(signatureCandidates: dict, ngramSize: int, numberOfFiles: int)
     sigcandidate_required = signatureCandidates[ngramSize]
     
     datamatrix = np.zeros((numberOfFiles, len(sigcandidate_required)))
-    print("HERE", datamatrix)
+    # print("HERE", datamatrix)
     for i, sigCandid in enumerate(sigcandidate_required):
         
         cover = sigCandid.getCoverage()
         
         for fileNumber in cover:
             datamatrix[fileNumber][i] = 1
-    print(datamatrix, type(datamatrix))
+    # print(datamatrix, type(datamatrix))
     # return datamatrix, sigcandidate_required
     return datamatrix
-
-def prepCluster(row_clusters: list, column_clusters: list):
-    
-    
-    
-
-
 
