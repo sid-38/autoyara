@@ -34,7 +34,7 @@ def getSigcandidates(malware_bloom_dir, benign_bloom_dir, live_mal_dir):
     ben_dir = benign_bloom_dir
     # Create an ordered list of bloom sizes
     bloomSizes = collectBloomSizes([mal_dir, ben_dir])
-    # bloomSizes = [8]
+    # bloomSizes = [8,16]
     # Create bloom filters
     mal_bloom = collectBloomFilters(mal_dir)
     ben_bloom = collectBloomFilters(ben_dir)
@@ -43,7 +43,7 @@ def getSigcandidates(malware_bloom_dir, benign_bloom_dir, live_mal_dir):
     best_rule_coverage = 0.0
     meets_min_desired_coverage = False
     
-    print(bloomSizes);
+    # print(bloomSizes);
     
     sigcandidates = {}
     

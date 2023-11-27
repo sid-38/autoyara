@@ -1,6 +1,6 @@
 from NGram import NGram 
 
-def ngram_clusters_to_yara(ngram_clusters, name="untitled"):
+def ngram_clusters_to_yara(ngram_clusters, data_matrix, name="untitled"):
     new_line = "\n"
     tab = "\t"
     rule = ""
@@ -9,10 +9,8 @@ def ngram_clusters_to_yara(ngram_clusters, name="untitled"):
     next_ngram_num = 1
 
     for ngram_cluster in ngram_clusters:
+        # print(ngram_cluster.ngrams)
         for ngram in ngram_cluster.ngrams:
-            
-    # for cluster_counts in ngram_clusters:
-    #     for ngram in cluster_counts['cluster']:
             if ngram.name in ngrams_with_nums:
                 ngram_num = ngrams_with_nums[ngram.name]
             else:
@@ -20,12 +18,12 @@ def ngram_clusters_to_yara(ngram_clusters, name="untitled"):
                 ngram_num = next_ngram_num
                 next_ngram_num += 1
 
-            strings += f"$x{ngram_num} = " + "{" + ngram.int_rep + "},\n\t\t"  
+            strings += f"$x{ngram_num} = " + "{" + ngram.int_rep + "}\n\t\t"  
 
     condition = ""
 
     for j,ngram_cluster in enumerate(ngram_clusters):
-        condition += f"({ngram_cluster.get_minCount()} of ("
+        condition += f"({ngram_cluster.get_minCount(data_matrix)} of ("
         for i,ngram in enumerate(ngram_cluster.ngrams):
             condition += f"$x{ngrams_with_nums[ngram.name]}"
             if i != len(ngram_cluster.ngrams) - 1:
@@ -37,19 +35,19 @@ def ngram_clusters_to_yara(ngram_clusters, name="untitled"):
     rule += "rule " + name + "\n{\n\tstrings:\n\t\t" + strings + "\n\tcondition:\n\t\t" + condition + "}"
     return rule
 
-def main():
+# def main():
 
-    test_ngram_clusters = [
-            {
-                'cluster': [NGram([23,43,12]),NGram([13,32,54]),NGram([54,25,76])],
-                'count': 2
-            },
-            {
-                'cluster': [NGram([11,34]),NGram([79,98,87])],
-                'count': 3
-            }
-        ]
-    print(ngram_clusters_to_yara(test_ngram_clusters, name="test"))
+#     test_ngram_clusters = [
+#             {
+#                 'cluster': [NGram([23,43,12]),NGram([13,32,54]),NGram([54,25,76])],
+#                 'count': 2
+#             },
+#             {
+#                 'cluster': [NGram([11,34]),NGram([79,98,87])],
+#                 'count': 3
+#             }
+#         ]
+#     print(ngram_clusters_to_yara(test_ngram_clusters, name="test"))
 
 # main()
 
