@@ -7,8 +7,12 @@ def ngram_clusters_to_yara(ngram_clusters, name="untitled"):
     strings = ""
     ngrams_with_nums = dict()
     next_ngram_num = 1
-    for cluster_counts in ngram_clusters:
-        for ngram in cluster_counts['cluster']:
+
+    for ngram_cluster in ngram_clusters:
+        for ngram in ngram_cluster.ngrams:
+            
+    # for cluster_counts in ngram_clusters:
+    #     for ngram in cluster_counts['cluster']:
             if ngram.name in ngrams_with_nums:
                 ngram_num = ngrams_with_nums[ngram.name]
             else:
@@ -19,11 +23,12 @@ def ngram_clusters_to_yara(ngram_clusters, name="untitled"):
             strings += f"$x{ngram_num} = " + "{" + ngram.int_rep + "},\n\t\t"  
 
     condition = ""
-    for j, cluster_counts in enumerate(ngram_clusters):
-        condition += f"({cluster_counts['count']} of ("
-        for i, ngram in enumerate(cluster_counts['cluster']):
+
+    for j,ngram_cluster in enumerate(ngram_clusters):
+        condition += f"({ngram_cluster.get_minCount()} of ("
+        for i,ngram in enumerate(ngram_cluster.ngrams):
             condition += f"$x{ngrams_with_nums[ngram.name]}"
-            if i != len(cluster_counts['cluster']) - 1:
+            if i != len(ngram_cluster.ngrams) - 1:
                 condition += ','
         condition += '))'
         if j != len(ngram_clusters) - 1:

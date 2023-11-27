@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 from sklearn.cluster import SpectralCoclustering
 from AutoYaraCluster import *
-from NGram import NGram
+from NGram import NGram, NGramCluster
 from YaraRuleCreator import *
 
 def sigCandidate_to_NGram(sig_candidate, size):
@@ -31,27 +31,22 @@ def main():
         clustering = SpectralCoclustering(n_clusters=2, random_state=0).fit(dataMatrix)
         clusterRows, clusterCols = clustering.row_labels_, clustering.column_labels_
         
-        # print('Signature Candidates\n', sigcandidates)
-        # print('Signature Candidates Keys\n', signaturecandidate_keys)
-        # print('File Count\n', filecount)
-        # print('Data Matrix\n', dataMatrix, type(dataMatrix))
-        # print(clusterRows , clusterCols)
 
         clusters = dict()
-        for i, cluster in enumerate(clusterCols):
-            if cluster in clusters:
-                clusters[cluster].append(sigCandidate_to_NGram(sigcandidates[bloomSize][i], bloomSize))
+
+
+        for i,cluster in enumerate(clusterCols):
+            if cluster not in clusters:
+                new_ngram_cluster = NGramCluster(cluster)
+                new_ngram_cluster.add_ngram(sigCandidate_to_NGram(sigcandidates[bloomSize][i], bloomSize))
+                clusters[cluster] = new_ngram_cluster
             else:
-                clusters[cluster] = [sigCandidate_to_NGram(sigcandidates[bloomSize][i], bloomSize)]
-        # print('NGram Clusters\n', clusters)
+                clusters[cluster].add_ngram(sigCandidate_to_NGram(sigcandidates[bloomSize][i], bloomSize))
 
-        ngram_clusters = []
-        for key in clusters:
-            ngram_clusters.append({'cluster':clusters[key], 'count':len(clusters[key])})
+        for i, cluster in enumerate(clusterRows):
+            clusters[cluster].add_sample(i)
 
-        # print('NGram Clusters new\n', ngram_clusters)
-
-        print(ngram_clusters_to_yara(ngram_clusters, name=f"{bloomSize}_rule"))
+        print(ngram_clusters_to_yara(list(clusters.values()), name=f"{bloomSize}_rule"))
     
     
 main()
