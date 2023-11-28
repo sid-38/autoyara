@@ -47,10 +47,16 @@ class NGramCluster:
 
         file_occurence_counts.sort()
 
+        if(len(file_occurence_counts) == 0):
+            print("Empty file occurence counts")
+            print(self.ngrams, self.samples)
+            return 0
+
         # print(file_occurence_counts)
 
 
         min_variance = math.inf
+        min_index = -1
         
         for i in range(len(file_occurence_counts)):
             left_portion = file_occurence_counts[:i]
@@ -64,11 +70,12 @@ class NGramCluster:
             # total_variance = statistics.variance(left_portion) * len(left_portion) + statistics.variance(right_portion) * len(right_portion)
             total_variance = left_portion_variance * len(left_portion) + right_portion_variance * len(right_portion)
             if total_variance < min_variance:
+                # print(f"Changing min index from {min_index} to {i}")
                 min_index = i
                 min_variance = total_variance 
 
         index = min(len(file_occurence_counts)-1 , min_index)
-        
+        # print(index) 
             
         return file_occurence_counts[index]
         # return file_occurence_counts[-1]

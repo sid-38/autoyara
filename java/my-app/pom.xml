@@ -32,7 +32,7 @@
     <dependency>
       <groupId>com.github.sid-38</groupId>
       <artifactId>AutoYaraNCRP</artifactId>
-      <version>f69d78c6b4</version>
+      <version>-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.github.sid-38</groupId>

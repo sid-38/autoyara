@@ -26,28 +26,39 @@ def main():
     filecount = getFilecount("./mw1")
     bloomSizes = list(signaturecandidate_keys)
     # bloomSizes = [8,16]
+    clusterSizes = [2,3,4,5]
     for bloomSize in bloomSizes:
-        # print(f"{bloomSize} n-grams")
-        dataMatrix = createDataset(sigcandidates, bloomSize, filecount)
-        clustering = SpectralCoclustering(n_clusters=2, random_state=0).fit(dataMatrix)
-        clusterRows, clusterCols = clustering.row_labels_, clustering.column_labels_
+        for clusterSize in clusterSizes:
+            # print(f"{bloomSize} n-grams")
+            dataMatrix = createDataset(sigcandidates, bloomSize, filecount)
+            clustering = SpectralCoclustering(n_clusters=clusterSize, random_state=0).fit(dataMatrix)
+            clusterRows, clusterCols = clustering.row_labels_, clustering.column_labels_
 
-        clusters = dict()
-        # print(clusters)  
+            clusters = dict()
+            # print(clusters)  
 
 
-        for i,cluster in enumerate(clusterCols):
-            if cluster not in clusters:
-                new_ngram_cluster = NGramCluster(cluster, bloomSize)
-                new_ngram_cluster.add_ngram(sigCandidate_to_NGram(i, sigcandidates[bloomSize][i], bloomSize))
-                clusters[cluster] = new_ngram_cluster
-            else:
-                clusters[cluster].add_ngram(sigCandidate_to_NGram(i, sigcandidates[bloomSize][i], bloomSize))
+            for i,cluster in enumerate(clusterCols):
+                if cluster not in clusters:
+                    new_ngram_cluster = NGramCluster(cluster, bloomSize)
+                    new_ngram_cluster.add_ngram(sigCandidate_to_NGram(i, sigcandidates[bloomSize][i], bloomSize))
+                    clusters[cluster] = new_ngram_cluster
+                else:
+                    clusters[cluster].add_ngram(sigCandidate_to_NGram(i, sigcandidates[bloomSize][i], bloomSize))
 
-        for i, cluster in enumerate(clusterRows):
-            clusters[cluster].add_sample(i)
+            for i, cluster in enumerate(clusterRows):
+                # Ignoring clusters with just samples and no ngrams
+                if cluster in clusters:
+                    clusters[cluster].add_sample(i)
 
-        print(ngram_clusters_to_yara(list(clusters.values()), dataMatrix, name=f"rule{bloomSize}"))
+            # Removing clusters with just ngrams and no samples
+
+            for cluster_id in clusters.keys():
+                if len(clusters[cluster_id].ngrams) == 0:
+                    print("Deleting a cluster with no ngrams")
+                    del clusters[cluster_id]
+
+            print(ngram_clusters_to_yara(list(clusters.values()), dataMatrix, name=f"rule_{bloomSize}ngram_{clusterSize}clusters"))
     
     
 main()

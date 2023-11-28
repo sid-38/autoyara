@@ -54,7 +54,7 @@ def getSigcandidates(malware_bloom_dir, benign_bloom_dir, live_mal_dir):
         # print(os.path.abspath("./mw1"))
         # print(os.path.abspath(ben_dir))
         # print(os.path.abspath(mal_dir))
-        final_candidates = gateway.entry_point.myBuildCandidateSet(os.path.abspath(live_mal_dir), os.path.abspath(ben_dir), os.path.abspath(mal_dir), bloomSize, 100, 100, False, 0.001)
+        final_candidates = gateway.entry_point.myBuildCandidateSet(os.path.abspath(live_mal_dir), os.path.abspath(ben_dir), os.path.abspath(mal_dir), bloomSize, 1000, 100, False, 0.001)
         # print(final_candidates)
         
         sigcandidates.update({bloomSize: final_candidates})
