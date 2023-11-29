@@ -17,16 +17,19 @@ def sigCandidate_to_NGram(uid, sig_candidate, size):
 def main():
     
     
+    filepath_maliciousBytes = input('Enter the filepath for malicious bytes: ')
+    filepath_benignBytes = input('Enter the filepath for benign bytes: ')
+    filepath_trainMalware = input('Enter the filepath for train malware files: ')
     
-    sigcandidates, signaturecandidate_keys = getSigcandidates("../malicious-bytes", 
-                                     "../benign-bytes", 
-                                     "/home/vboxuser/malware_train")
+    sigcandidates, signaturecandidate_keys = getSigcandidates(filepath_maliciousBytes, 
+                                     filepath_benignBytes, 
+                                     filepath_trainMalware)
     
     
-    filecount = getFilecount("/home/vboxuser/malware_train")
+    filecount = getFilecount(filepath_trainMalware)
     bloomSizes = list(signaturecandidate_keys)
     # bloomSizes = [8,16]
-    clusterSizes = [2,3,4,5]
+    clusterSizes = input('Enter the array of cluster sizes you wanna experiment with: ')
     for bloomSize in bloomSizes:
         for clusterSize in clusterSizes:
             # print(f"{bloomSize} n-grams")
@@ -55,7 +58,7 @@ def main():
 
             for cluster_id in clusters.keys():
                 if len(clusters[cluster_id].ngrams) == 0:
-                    print("Deleting a cluster with no ngrams")
+                    # print("Deleting a cluster with no ngrams")
                     del clusters[cluster_id]
 
             print(ngram_clusters_to_yara(list(clusters.values()), dataMatrix, name=f"rule_{bloomSize}ngram_{clusterSize}clusters"))
