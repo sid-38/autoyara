@@ -31,15 +31,38 @@ for i in range(len(hashes)):
     for j in range (i+1, len(hashes)):
         sim = ssdeep.compare(hashes[i], hashes[j])
         
-        if sim >= 25:
+        if sim >= 15:
             sims.append(sim)
             candidates.append([j])
             similarityInfo.update({f'{j}': sim})
             count = count + 1
     counts.update({i: count})
 
-print(counts)
+# print(counts)
+vals = list(counts.values())
+keys = list(counts.keys())
+# print(keys)
+candidate_mals = []
+for i in range(len(vals)):
+    if vals[i] > 30:
+        
+        candidate_mals.append(keys[i])
+        
+        
+print(candidate_mals)
+
+for mal in candidate_mals:
+    print(filelist[mal])
         
 # with open('./similarityInfo.pkl', 'wb') as f:
 #     pickle.dump(similarityInfo, f)
-    
+
+req_files = []
+for j in range (len(hashes)):
+    sim = ssdeep.compare(hashes[38], hashes[j])
+        
+    if sim >= 15:
+        req_files.append(filelist[j])
+        
+        
+# print(req_files)
