@@ -18,12 +18,12 @@ def main():
     
     
     
-    sigcandidates, signaturecandidate_keys = getSigcandidates("./malicious-bytes", 
-                                     "./benign-bytes", 
-                                     "./mw1")
+    sigcandidates, signaturecandidate_keys = getSigcandidates("../malicious-bytes", 
+                                     "../benign-bytes", 
+                                     "/home/vboxuser/malware_train")
     
     
-    filecount = getFilecount("./mw1")
+    filecount = getFilecount("/home/vboxuser/malware_train")
     bloomSizes = list(signaturecandidate_keys)
     # bloomSizes = [8,16]
     clusterSizes = [2,3,4,5]

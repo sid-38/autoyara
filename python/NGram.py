@@ -7,6 +7,7 @@ class NGram:
         self.ngram_list = ngram_list
         self.name = ''.join(f"{ngram_int} " for ngram_int in ngram_list).strip()
         self.int_rep = ''.join(f"{ngram_int:02x} " for ngram_int in ngram_list).strip()
+        self.ascii_string = ''.join(chr(ngram_int) for ngram_int in ngram_list)
         self.size = len(ngram_list)
 
 class NGramCluster:
