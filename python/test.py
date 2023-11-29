@@ -23,6 +23,7 @@ for file in filelist:
         
 fileNumber = input('Enter File Number: ')
 fileNumber = int(fileNumber)
+print(f'Candidate File:\n{filelist[fileNumber]}')
 req_files = []
 for j in range (len(hashes)):
     sim = ssdeep.compare(hashes[fileNumber], hashes[j])
