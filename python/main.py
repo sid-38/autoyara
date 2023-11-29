@@ -17,9 +17,9 @@ def sigCandidate_to_NGram(uid, sig_candidate, size):
 def main():
     
     
-    filepath_maliciousBytes = input('Enter the filepath for malicious bytes: ')
-    filepath_benignBytes = input('Enter the filepath for benign bytes: ')
-    filepath_trainMalware = input('Enter the filepath for train malware files: ')
+    filepath_maliciousBytes = sys.argv[2]
+    filepath_benignBytes = sys.argv[1]
+    filepath_trainMalware = sys.argv[3]
     
     sigcandidates, signaturecandidate_keys = getSigcandidates(filepath_maliciousBytes, 
                                      filepath_benignBytes, 

@@ -49,8 +49,6 @@ class NGramCluster:
         file_occurence_counts.sort()
 
         if(len(file_occurence_counts) == 0):
-            print("Empty file occurence counts")
-            print(self.ngrams, self.samples)
             return 0
 
         # print(file_occurence_counts)
