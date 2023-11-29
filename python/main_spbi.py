@@ -3,6 +3,7 @@ import re
 import pickle
 import numpy as np
 from sklearn.cluster import SpectralCoclustering
+from sklearn.cluster import SpectralBiclustering
 from AutoYaraCluster import *
 from NGram import NGram, NGramCluster
 from YaraRuleCreator import *
@@ -29,12 +30,12 @@ def main():
     filecount = getFilecount(filepath_trainMalware)
     bloomSizes = list(signaturecandidate_keys)
     # bloomSizes = [8,16]
-    clusterSizes = input('Enter the array of cluster sizes you wanna experiment with: ')
+    clusterSizes = [2, 3, 4, 5]
     for bloomSize in bloomSizes:
         for clusterSize in clusterSizes:
             # print(f"{bloomSize} n-grams")
             dataMatrix = createDataset(sigcandidates, bloomSize, filecount)
-            clustering = SpectralCoclustering(n_clusters=clusterSize, random_state=0).fit(dataMatrix)
+            clustering = SpectralBiclustering(n_clusters=clusterSize, method='log').fit(dataMatrix)
             clusterRows, clusterCols = clustering.row_labels_, clustering.column_labels_
 
             clusters = dict()
