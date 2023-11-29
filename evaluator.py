@@ -9,6 +9,8 @@ results_filepath = sys.argv[1]
 num_of_benign = int(sys.argv[2])
 num_of_malicious = int(sys.argv[3])
 
+print("Num of benign", num_of_benign)
+print("Num of malicious", num_of_malicious)
 evaluations = dict()
 
 with open(results_filepath) as f:
@@ -30,7 +32,7 @@ with open(results_filepath) as f:
 
 
 for rule_name in evaluations:
-    # print(rule_name)
+    print(rule_name)
     tp = evaluations[rule_name]["mal_count"]
     fp = evaluations[rule_name]["ben_count"]
     tn = num_of_benign - fp
@@ -47,13 +49,13 @@ for rule_name in evaluations:
     evaluations[rule_name]['precision'] = precision
     evaluations[rule_name]['recall'] = recall
     evaluations[rule_name]['f1'] = f1
-    # print("TP", tp,"FP", fp, "TN", tn, "FN", fn,)
+    print("TP", tp,"FP", fp, "TN", tn, "FN", fn,)
 
-    # print("Accuracy", accuracy*100)
-    # print("Precision", precision)
-    # print("Recall", recall)
-    # print("F1", f1)
-    # print("\n")
+    print("Accuracy", accuracy*100)
+    print("Precision", precision)
+    print("Recall", recall)
+    print("F1", f1)
+    print("\n")
 print(evaluations)
 
        

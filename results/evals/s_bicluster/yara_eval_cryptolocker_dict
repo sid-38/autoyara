@@ -1,0 +1,259 @@
+Num of benign 582
+Num of malicious 66
+rule_8ngram_3clusters
+TP 62 FP 577 TN 5 FN 4
+Accuracy 10.339506172839506
+Precision 0.09702660406885759
+Recall 0.9393939393939394
+F1 0.175886524822695
+
+
+rule_8ngram_4clusters
+TP 59 FP 578 TN 4 FN 7
+Accuracy 9.722222222222223
+Precision 0.09262166405023547
+Recall 0.8939393939393939
+F1 0.1678520625889047
+
+
+rule_8ngram_5clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_16ngram_2clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_16ngram_3clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_16ngram_4clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_16ngram_5clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_32ngram_4clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_32ngram_5clusters
+TP 65 FP 578 TN 4 FN 1
+Accuracy 10.648148148148149
+Precision 0.10108864696734059
+Recall 0.9848484848484849
+F1 0.18335684062059238
+
+
+rule_64ngram_2clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_64ngram_3clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_64ngram_4clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_64ngram_5clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_128ngram_4clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_256ngram_3clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_256ngram_4clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_256ngram_5clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_512ngram_2clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_512ngram_3clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_512ngram_4clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_512ngram_5clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_1024ngram_2clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_1024ngram_3clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_1024ngram_4clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_1024ngram_5clusters
+TP 65 FP 581 TN 1 FN 1
+Accuracy 10.185185185185185
+Precision 0.10061919504643962
+Recall 0.9848484848484849
+F1 0.18258426966292132
+
+
+rule_8ngram_2clusters
+TP 56 FP 7 TN 575 FN 10
+Accuracy 97.37654320987654
+Precision 0.8888888888888888
+Recall 0.8484848484848485
+F1 0.8682170542635659
+
+
+rule_32ngram_2clusters
+TP 22 FP 0 TN 582 FN 44
+Accuracy 93.20987654320987
+Precision 1.0
+Recall 0.3333333333333333
+F1 0.5
+
+
+rule_32ngram_3clusters
+TP 56 FP 0 TN 582 FN 10
+Accuracy 98.4567901234568
+Precision 1.0
+Recall 0.8484848484848485
+F1 0.9180327868852458
+
+
+rule_128ngram_2clusters
+TP 53 FP 0 TN 582 FN 13
+Accuracy 97.99382716049382
+Precision 1.0
+Recall 0.803030303030303
+F1 0.8907563025210083
+
+
+rule_128ngram_5clusters
+TP 23 FP 0 TN 582 FN 43
+Accuracy 93.3641975308642
+Precision 1.0
+Recall 0.3484848484848485
+F1 0.5168539325842696
+
+
+rule_256ngram_2clusters
+TP 17 FP 0 TN 582 FN 49
+Accuracy 92.43827160493827
+Precision 1.0
+Recall 0.25757575757575757
+F1 0.40963855421686746
+
+
+rule_128ngram_3clusters
+TP 36 FP 0 TN 582 FN 30
+Accuracy 95.37037037037037
+Precision 1.0
+Recall 0.5454545454545454
+F1 0.7058823529411764
+
+
+{'rule_8ngram_3clusters': {'mal_count': 62, 'ben_count': 577, 'tp': 62, 'fp': 577, 'tn': 5, 'fn': 4, 'accuracy': 0.10339506172839506, 'precision': 0.09702660406885759, 'recall': 0.9393939393939394, 'f1': 0.175886524822695}, 'rule_8ngram_4clusters': {'mal_count': 59, 'ben_count': 578, 'tp': 59, 'fp': 578, 'tn': 4, 'fn': 7, 'accuracy': 0.09722222222222222, 'precision': 0.09262166405023547, 'recall': 0.8939393939393939, 'f1': 0.1678520625889047}, 'rule_8ngram_5clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_16ngram_2clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_16ngram_3clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_16ngram_4clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_16ngram_5clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_32ngram_4clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_32ngram_5clusters': {'mal_count': 65, 'ben_count': 578, 'tp': 65, 'fp': 578, 'tn': 4, 'fn': 1, 'accuracy': 0.10648148148148148, 'precision': 0.10108864696734059, 'recall': 0.9848484848484849, 'f1': 0.18335684062059238}, 'rule_64ngram_2clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_64ngram_3clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_64ngram_4clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_64ngram_5clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_128ngram_4clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_256ngram_3clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_256ngram_4clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_256ngram_5clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_512ngram_2clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_512ngram_3clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_512ngram_4clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_512ngram_5clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_1024ngram_2clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_1024ngram_3clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_1024ngram_4clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_1024ngram_5clusters': {'mal_count': 65, 'ben_count': 581, 'tp': 65, 'fp': 581, 'tn': 1, 'fn': 1, 'accuracy': 0.10185185185185185, 'precision': 0.10061919504643962, 'recall': 0.9848484848484849, 'f1': 0.18258426966292132}, 'rule_8ngram_2clusters': {'mal_count': 56, 'ben_count': 7, 'tp': 56, 'fp': 7, 'tn': 575, 'fn': 10, 'accuracy': 0.9737654320987654, 'precision': 0.8888888888888888, 'recall': 0.8484848484848485, 'f1': 0.8682170542635659}, 'rule_32ngram_2clusters': {'mal_count': 22, 'ben_count': 0, 'tp': 22, 'fp': 0, 'tn': 582, 'fn': 44, 'accuracy': 0.9320987654320988, 'precision': 1.0, 'recall': 0.3333333333333333, 'f1': 0.5}, 'rule_32ngram_3clusters': {'mal_count': 56, 'ben_count': 0, 'tp': 56, 'fp': 0, 'tn': 582, 'fn': 10, 'accuracy': 0.9845679012345679, 'precision': 1.0, 'recall': 0.8484848484848485, 'f1': 0.9180327868852458}, 'rule_128ngram_2clusters': {'mal_count': 53, 'ben_count': 0, 'tp': 53, 'fp': 0, 'tn': 582, 'fn': 13, 'accuracy': 0.9799382716049383, 'precision': 1.0, 'recall': 0.803030303030303, 'f1': 0.8907563025210083}, 'rule_128ngram_5clusters': {'mal_count': 23, 'ben_count': 0, 'tp': 23, 'fp': 0, 'tn': 582, 'fn': 43, 'accuracy': 0.933641975308642, 'precision': 1.0, 'recall': 0.3484848484848485, 'f1': 0.5168539325842696}, 'rule_256ngram_2clusters': {'mal_count': 17, 'ben_count': 0, 'tp': 17, 'fp': 0, 'tn': 582, 'fn': 49, 'accuracy': 0.9243827160493827, 'precision': 1.0, 'recall': 0.25757575757575757, 'f1': 0.40963855421686746}, 'rule_128ngram_3clusters': {'mal_count': 36, 'ben_count': 0, 'tp': 36, 'fp': 0, 'tn': 582, 'fn': 30, 'accuracy': 0.9537037037037037, 'precision': 1.0, 'recall': 0.5454545454545454, 'f1': 0.7058823529411764}}
