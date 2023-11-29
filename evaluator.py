@@ -44,9 +44,9 @@ for rule_name in evaluations:
     evaluations[rule_name]['tn'] = tn
     evaluations[rule_name]['fn'] = fn
     evaluations[rule_name]['accuracy'] = accuracy
-    evaluations[rule_name]['precision'] = accuracy
-    evaluations[rule_name]['recall'] = accuracy
-    evaluations[rule_name]['f1'] = accuracy
+    evaluations[rule_name]['precision'] = precision
+    evaluations[rule_name]['recall'] = recall
+    evaluations[rule_name]['f1'] = f1
     # print("TP", tp,"FP", fp, "TN", tn, "FN", fn,)
 
     # print("Accuracy", accuracy*100)
