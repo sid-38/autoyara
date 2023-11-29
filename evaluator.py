@@ -30,7 +30,7 @@ with open(results_filepath) as f:
 
 
 for rule_name in evaluations:
-    print(rule_name)
+    # print(rule_name)
     tp = evaluations[rule_name]["mal_count"]
     fp = evaluations[rule_name]["ben_count"]
     tn = num_of_benign - fp
@@ -39,13 +39,22 @@ for rule_name in evaluations:
     precision = tp/(tp+fp)
     recall = tp/(tp+fn)
     f1 = (2*precision*recall)/(precision+recall)
-    print("TP", tp,"FP", fp, "TN", tn, "FN", fn,)
+    evaluations[rule_name]['tp'] = tp
+    evaluations[rule_name]['fp'] = fp
+    evaluations[rule_name]['tn'] = tn
+    evaluations[rule_name]['fn'] = fn
+    evaluations[rule_name]['accuracy'] = accuracy
+    evaluations[rule_name]['precision'] = accuracy
+    evaluations[rule_name]['recall'] = accuracy
+    evaluations[rule_name]['f1'] = accuracy
+    # print("TP", tp,"FP", fp, "TN", tn, "FN", fn,)
 
-    print("Accuracy", accuracy*100)
-    print("Precision", precision)
-    print("Recall", recall)
-    print("F1", f1)
-    print("\n")
+    # print("Accuracy", accuracy*100)
+    # print("Precision", precision)
+    # print("Recall", recall)
+    # print("F1", f1)
+    # print("\n")
+print(evaluations)
 
        
 
