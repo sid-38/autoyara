@@ -22,9 +22,9 @@ def collectBloomFilters(filepath):
 def buildCandidateSet():
     pass
 
-def getSigcandidates(malware_bloom_dir, benign_bloom_dir, live_mal_dir):
+def getSigcandidates(gateway, malware_bloom_dir, benign_bloom_dir, live_mal_dir):
     
-    gateway = JavaGateway()
+    # gateway = JavaGateway()
 
     # mal_dir = "/Users/soumyajyotidutta/AutoYara 2/malicious-bytes"
     # ben_dir = "/Users/soumyajyotidutta/AutoYara 2/benign-bytes"
@@ -33,7 +33,8 @@ def getSigcandidates(malware_bloom_dir, benign_bloom_dir, live_mal_dir):
     mal_dir = malware_bloom_dir
     ben_dir = benign_bloom_dir
     # Create an ordered list of bloom sizes
-    bloomSizes = collectBloomSizes([mal_dir, ben_dir])
+    # bloomSizes = collectBloomSizes([mal_dir, ben_dir])
+    bloomSizes = [8,16,32,64,128,256,512]
     # bloomSizes = [8,16]
     # Create bloom filters
     mal_bloom = collectBloomFilters(mal_dir)
